@@ -46,18 +46,16 @@ npm test                     # Lancer les tests
 npm run build                # Compiler TypeScript (met à jour dist/)
 
 # Lister les stacks disponibles
-npx cdk list -c stage=sandbox --profile sandbox --app "node dist/bin/app.js"
-
-npx cdk deploy -c stage=sandbox -c aws_profile=sandbox --profile sandbox
+npx cdk list
 
 # Synthétiser le template CloudFormation
-npx cdk synth -c stage=sandbox --profile sandbox --app "node dist/bin/app.js"
+npx cdk synth
 
 # Voir les changements avant déploiement
-npx cdk diff -c stage=sandbox --profile sandbox --app "node dist/bin/app.js"
+npx cdk diff --profile sandbox
 
 # Déployer les stacks
-npx cdk deploy --all -c stage=sandbox --profile sandbox --app "node dist/bin/app.js"
+npx cdk deploy --all --profile sandbox
 ```
 
 
