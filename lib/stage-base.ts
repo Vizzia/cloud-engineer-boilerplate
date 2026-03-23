@@ -1,22 +1,16 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { EnvironmentConfig } from '../bin/environments.js';
+import { EnvironmentConfig } from '../bin/environments';
 
-export interface StageBaseProps extends cdk.StageProps {
+export interface StageBaseProps {
   readonly environment: EnvironmentConfig;
 }
 
-export class StageBase extends cdk.Stage {
+export class StageBase extends Construct {
   public readonly environment: EnvironmentConfig;
 
   constructor(scope: Construct, id: string, props: StageBaseProps) {
-    super(scope, id, {
-      ...props,
-      env: {
-        account: props.environment.account,
-        region: props.environment.region,
-      },
-    });
+    super(scope, id);
 
     this.environment = props.environment;
 
@@ -25,6 +19,8 @@ export class StageBase extends cdk.Stage {
   }
 
   protected prefixedId(id: string): string {
-    return `${this.environment.prefix}-${id}`;
+    return this.environment.prefix
+      ? `${this.environment.prefix}-${id}`
+      : id;
   }
 }

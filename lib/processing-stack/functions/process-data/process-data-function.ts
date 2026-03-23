@@ -5,10 +5,6 @@ import { PythonFunction } from '@aws-cdk/aws-lambda-python-alpha';
 import { Duration } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { EnvironmentConfig } from '../../../../bin/environments.js';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 export interface ProcessDataFunctionProps {
   readonly dataBucket: s3.Bucket;

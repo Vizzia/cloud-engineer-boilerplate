@@ -3,8 +3,8 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as sfn from 'aws-cdk-lib/aws-stepfunctions';
 import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks';
 import { Construct } from 'constructs';
-import { EnvironmentConfig } from '../../bin/environments.js';
-import { ProcessDataFunction } from './functions/process-data/process-data-function.js';
+import { EnvironmentConfig } from '../../bin/environments';
+import { ProcessDataFunction } from './functions/process-data/process-data-function';
 
 export interface ProcessingStackProps extends cdk.StackProps {
   readonly environment: EnvironmentConfig;

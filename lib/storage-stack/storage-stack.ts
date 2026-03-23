@@ -1,7 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
-import { EnvironmentConfig } from '../../bin/environments.js';
+import { EnvironmentConfig } from '../../bin/environments';
 
 export interface StorageStackProps extends cdk.StackProps {
   readonly environment: EnvironmentConfig;
