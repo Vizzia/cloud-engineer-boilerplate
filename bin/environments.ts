@@ -12,7 +12,7 @@ export const environments: Record<string, EnvironmentConfig> = {
     account: '983988120331',
     region: 'eu-west-1',
     stage: 'sandbox',
-    prefix: 'louison-test',
+    prefix: 'cloud-eng-test',
   },
 };
 
