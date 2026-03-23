@@ -63,7 +63,11 @@ npx cdk deploy --all --profile sandbox
 
 ## Scénarios pratiques
 
-Avant toute chose change le prefix dans le fichier `environnement.ts`
+Avant toute chose 
+
+- change le prefix dans le fichier `environnement.ts`
+- test tes credentials pour le compte aws sandbox
+- crée une branche prenom.nom
 
 ### Scénario 1 : Ajouter une étape de validation à la Step Function
 
