@@ -36,15 +36,12 @@ lib/
 
 ```bash
 npm install                  # Installer les dépendances
-npm run build                # Compiler TypeScript
 npm test                     # Lancer les tests
 ```
 
 ### Déploiement
 
 ```bash
-npm run build                # Compiler TypeScript (met à jour dist/)
-
 # Lister les stacks disponibles
 npx cdk list
 
@@ -76,7 +73,7 @@ Avant toute chose
 **Objectif :**
 1. Créer une nouvelle Lambda Python `validate-data` qui :
    - Lit le fichier depuis le `DataBucket`
-   - Vérifie que c'est un JSON valide contenant un champ `records` (liste)
+   - Vérifie que c'est un JSON valide contenant une liste de record {`id`, `value`} (liste)
    - Retourne `{ "status": "VALID" }` ou `{ "status": "INVALID", "error": "..." }`
 2. Intégrer cette Lambda comme **première étape** de la Step Function existante
 3. Si la validation échoue (`INVALID`), la Step Function doit échouer avec un état `Fail`
